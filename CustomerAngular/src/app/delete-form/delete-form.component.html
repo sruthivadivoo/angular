@@ -1,0 +1,18 @@
+<title>Customer Persnoal Information</title>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #customerForm="ngForm">
+      <div class="form-group">
+      <label for="id">Id</label>
+<input type="text" [(ngModel)]="customer.id"
+class="form-control"
+name="id" 
+id="id"
+required #age="ngModel">
+</div>
+
+        <button type="submit" [disabled]="!customerForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

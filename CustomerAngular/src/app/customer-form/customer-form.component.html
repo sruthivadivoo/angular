@@ -1,0 +1,50 @@
+<title>Customer Persnoal Information</title>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="OnSubmit()" #customerForm="ngForm">
+     
+       <div class="form-group">
+      <label for="age">Age:</label>
+<input type="text" [(ngModel)]="customer.age"
+class="form-control"
+name="age" 
+id="age"
+required #age="ngModel">
+</div>
+      <div class="form-group">
+        <label for="fname">First name:</label>
+       <input type="text" [(ngModel)]="customer.fname" 
+          class="form-control"
+          id="fname"
+          name="fname"
+          placeholder="Enter your name"
+          required #fname="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="lname">Last name:</label>
+       <input type="text" [(ngModel)]="customer.lname" 
+          class="form-control"
+          id="lname"
+          name="lname"
+          placeholder="Enter your name"
+          required #lname="ngModel">
+      </div>
+     <div><label for="mob">Mobile Number:</label>
+<input 
+type="text" [(ngModel)]="customer.mob"
+name="mob" 
+required>
+</div>
+<div>
+<label for="salary">Salary:</label>
+<input type="text" [(ngModel)]="customer.salary"
+name="salary" 
+ min="10000" 
+ required #salary="ngModel">
+</div>
+
+        <button type="submit" [disabled]="!customerForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
