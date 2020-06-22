@@ -22,7 +22,6 @@ export class UserLoginComponent{
 
  OnSubmit() {
     this.customerService.login(this.login).subscribe(result => this.gotoCustomerList());
-    this.customerService.find(this.login).subscribe(result => this.gotoCustomerList());
   }
 gotoCustomerList(){
   this.router.navigate(['/find']);

@@ -25,8 +25,8 @@ private customersUrl: string;
       }
     });
   }
-  public login(login: Login): Observable<Login>{
-    return this.http.get<Login>('http://localhost:8086/login', {
+  public login(login: Login): Observable<Customer>{
+   return this.http.get<Customer>('http://localhost:8086/login', {
   params: {
     username : login.username,
     password : login.password
@@ -35,12 +35,8 @@ private customersUrl: string;
 
 });
   }
-  public find(login: Login): Observable<Customer>{
-     return this.http.get<Customer>('http://localhost:8086/find', {
-  params: {
-        username : login.username
-      }
-    });
+  public find(): Observable<Customer>{
+     return this.http.get<Customer>('http://localhost:8086/find');
   }
     public isCustomerLoggedIn() {
     let customer = localStorage.getItem('id');

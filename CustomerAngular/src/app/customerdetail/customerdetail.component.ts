@@ -13,5 +13,9 @@ login: Login;
   constructor(private customerService: CustomerServiceService) { }
 
   ngOnInit(){
-}
+      this.customerService.find().subscribe(data =>
+    {
+this.customers = data;
+  });
+  }
 }
