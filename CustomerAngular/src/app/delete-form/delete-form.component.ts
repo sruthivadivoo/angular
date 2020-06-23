@@ -21,6 +21,7 @@ onSubmit() {
   this.customerService.delete(this.customer).subscribe(result => this.gotoCustomerList());
 }
 gotoCustomerList(){
-  this.router.navigate(['/customers']);
+  this.router.navigate(['/first']);
+  alert('Customer Details deleted successfully');
 }
 }

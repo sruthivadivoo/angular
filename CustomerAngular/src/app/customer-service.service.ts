@@ -42,4 +42,7 @@ private customersUrl: string;
     let customer = localStorage.getItem('id');
     return !(customer === null);
   }
+  public logout(){
+    localStorage.removeItem('id');
+  }
 }

@@ -21,7 +21,7 @@ export class CustomerFormComponent {
     this.customerService.save(this.customer).subscribe(result => this.gotoCustomerList());
   }
 gotoCustomerList(){
-  this.router.navigate(['/customers']);
+  this.router.navigate(['/login']);
   alert('Customer Details added successfully');
 }
 }

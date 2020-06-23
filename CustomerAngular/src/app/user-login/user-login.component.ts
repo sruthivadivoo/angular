@@ -24,6 +24,6 @@ export class UserLoginComponent{
     this.customerService.login(this.login).subscribe(result => this.gotoCustomerList());
   }
 gotoCustomerList(){
-  this.router.navigate(['/find']);
+  this.router.navigate(['/find'], { state: { msg: 'Login Success..!!' } });
 }
 }

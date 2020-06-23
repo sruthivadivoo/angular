@@ -12,13 +12,14 @@ import { CustomerServiceService} from '../customer-service.service';
 })
 export class LogoutComponent {
    customers: Customer[];
- constructor(private customerService: CustomerServiceService) { }
+ constructor(
+          private route: ActivatedRoute,
+          private router: Router,
+          private customerService: CustomerServiceService) {}
 
-  ngOnInit(){
-    this.customerService.findAll().subscribe(data =>
-    {
-this.customers = data;
-  });
+  ngOnInit(): void{
+this.customerService.logout();
+this.router.navigate(['/login']);
   }
 
 }
